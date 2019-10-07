@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="laravel">
+    <serverData>
+      <paths name="laravel">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/wwwroot/default/laravel/public" local="$PROJECT_DIR$/public" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="/data/wwwroot/default/laravel/public/" />
+            <excludedPath local="true" path="$PROJECT_DIR$/public" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
