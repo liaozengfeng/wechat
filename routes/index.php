@@ -7,6 +7,11 @@ Route::any('/index/regist_do','Index\LoginController@regist_do');
 //登录
 Route::any('/index/login','Index\LoginController@login');
 Route::any('/index/login_do','Index\LoginController@login_do');
+//微信登录
+Route::any('/index/wechat_code','Index\LoginController@wechat_code');
+Route::any('/index/wechat_token','Index\LoginController@wechat_token');
+Route::any('/index/get','Index\LoginController@get');
+Route::any('/post/test','Index\LoginController@post');
 
 //测试
 Route::any('/index/session','Index\LoginController@session');
@@ -88,6 +93,8 @@ Route::group(['middleware'=>['IndexLogin']],function(){
     Route::any('/index/record','Index\UserController@record');
 
 });
+
+
 
 
 

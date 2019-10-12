@@ -2,8 +2,16 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="abc7d9d9-2ce9-4879-aaca-7eebb3e5f591" name="laravel" url="http://47.93.25.230 ">
-        <fileTransfer host="47.93.25.230 " port="22" rootFolder="/data/wwwroot/default/laravel/public" accessType="SFTP">
+      <webServer id="abc7d9d9-2ce9-4879-aaca-7eebb3e5f591" name="me shop" url="http://47.93.25.230">
+        <fileTransfer host="47.93.25.230" port="22" rootFolder="/data/wwwroot/default/shop/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="48adec3e-a329-4960-880c-458c9e423ac2" name="刘鑫" url="http://39.107.113.186">
+        <fileTransfer host="39.107.113.186" port="22" rootFolder="/data/wwwroot/default/shop/" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
           </advancedOptions>

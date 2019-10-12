@@ -8,6 +8,7 @@ use App\Models\ShopModel;
 use App\Models\BrandModel;
 use App\Models\SortModel;
 use App\Models\AdminModel;
+use App\Models\LableModel;
 use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 
 class AdminController extends Controller
@@ -15,12 +16,9 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-
         $da= new AdminModel;
-        $list= $da->paginate(3);
-        
-
-        return view('Admin.admin.index',['list'=>$list]);
+        $list= $da->all();
+        return view('admin.admin.index',['list'=>$list]);
 
     }
     public function save(Request $request){

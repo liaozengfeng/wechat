@@ -35,7 +35,16 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     //修改
     Route::get('/admin/edit/{id}','Admin\AdminController@edit');
     Route::post('/admin/edit/{id}','Admin\AdminController@update');
- 
+
+    //标签管理
+    Route::any('/lable/save','Admin\LableController@save');
+    Route::any('/lable/index','Admin\LableController@index');
+    Route::any('/lable/dele','Admin\LableController@delete');
+    Route::any('/lable/fans','Admin\LableController@fans');
+    Route::any('/lable/fans_list','Admin\LableController@fans_list');
+    Route::any('/lable/fans_save','Admin\LableController@fans_save');
+    Route::any('/lable/fans_del','Admin\LableController@fans_del');
+    Route::any('/lable/aaa','Admin\LableController@aaa');
 
     //分类
     Route::any('/sort/index','Admin\SortController@index');

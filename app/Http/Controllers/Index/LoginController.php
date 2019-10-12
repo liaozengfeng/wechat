@@ -100,4 +100,66 @@ class LoginController extends Controller
         //   dd(session('userinfo')['phone']);
          return view('index/user/index');
      }
+
+     //微信登录
+    //得到code
+    public function wechat_code(Request $request){
+        $url=urlencode(env('APP_URL')."/index/wechat_token");
+        header("location:https://open.weixin.qq.com/connect/oauth2/authorize?appid=".env('WECHAT_APPID')."&redirect_uri=$url&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
+    }
+    public function wechat_token(Request $request){
+        $code=$request->input("code");
+        $http="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".env('WECHAT_APPID')."&secret=".env('WECHAT_APPSECRET')."&code=$code&grant_type=authorization_code";
+        $res=file_get_contents($http);
+        $info=json_decode($res,1);
+        $access_token=$info['access_token'];
+        $openid=$info['openid'];
+        $where[] = [
+            'openid','=',$openid,
+        ];
+        $user_info=UserModels::where($where)->first();
+        if (empty($user_info)){
+            $arr=file_get_contents("https://api.weixin.qq.com/sns/userinfo?access_token=".$access_token."&openid=".$openid."&lang=zh_CN");
+            $users_info=json_decode($arr,1);
+            $user_info=[
+              "openid"=>$openid,
+              "phone"=>$users_info['nickname'],
+            ];
+            $res=\DB::table('user')->insertGetId($user_info);
+            $user_info=UserModels::where("uid",$res)->first()->toArray();
+            if (!empty($user_info)){
+                $request->session()->put('userinfo', $user_info);
+                return redirect("/index/user");
+            }
+        }else{
+            $request->session()->put('userinfo', $user_info);
+            return redirect("/index/user");
+        }
+    }
+
+    //get
+    public function get(Request $request){
+        $url='http://www.baidu.com/';
+        $curl=curl_init($url);
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+        $result=curl_exec($curl);
+        echo $result;
+        curl_close($curl);
+    }
+
+    public function post(Request $request){
+        $url='http://www.baidu.com/';
+        $curl=curl_init($url);
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+        
+        curl_setopt($curl,CURLOPT_POST,true);
+        $post_data = [
+          "name"=>222
+        ];
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,$post_data);
+
+        $result=curl_exec($curl);
+        var_dump($result);
+        curl_close($curl);
+    }
 }

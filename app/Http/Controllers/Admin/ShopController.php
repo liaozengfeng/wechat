@@ -20,7 +20,7 @@ class ShopController extends Controller
         if (count($data)==0){
             $data=false;
         }
-    	return view("Admin.shop.index",["list"=>$data]);
+    	return view("admin.shop.index",["list"=>$data]);
     }
     public function save(Request $request){
 
