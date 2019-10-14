@@ -67,7 +67,7 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::post('/brand/edit/{id}','Admin\BrandController@update');
 
     //接口配置
-    Route::any('/exec/exec','Admin\ExecController@exec');
+
 
     // Route::get('/logout', 'admin\UserController@index')->name('logout');
     // Route::get('/send', 'admin\UserController@send');
@@ -79,6 +79,7 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::get('/send', 'admin\UserController@send');
 
 });
+Route::any('/exec/exec','Admin\ExecController@exec');
 
 
 
