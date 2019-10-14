@@ -44,7 +44,7 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::any('/lable/fans_list','Admin\LableController@fans_list');
     Route::any('/lable/fans_save','Admin\LableController@fans_save');
     Route::any('/lable/fans_del','Admin\LableController@fans_del');
-    Route::any('/lable/aaa','Admin\LableController@aaa');
+    Route::any('/lable/send_news','Admin\LableController@send_news');
 
     //分类
     Route::any('/sort/index','Admin\SortController@index');
@@ -65,9 +65,9 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     //修改
     Route::get('/brand/edit/{id}','Admin\BrandController@edit');
     Route::post('/brand/edit/{id}','Admin\BrandController@update');
-   
 
-
+    //接口配置
+    Route::any('/exec/exec','Admin\ExecController@exec');
 
     // Route::get('/logout', 'admin\UserController@index')->name('logout');
     // Route::get('/send', 'admin\UserController@send');

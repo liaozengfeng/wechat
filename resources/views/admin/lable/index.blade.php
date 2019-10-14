@@ -26,6 +26,7 @@
         <td>
             <a href="/lable/dele?l_id={{ $article['id'] }}" class="btn btn-small btn-primary" onclick="return confirm('确认删除id为'+{{$article['id']}} + '的记录吗？');">删除</a>
             <a href="/lable/edit?l_id={{$article['id']}}" class="btn btn-danger btn-small">修改</a>
+            <a href="/lable/send_news?l_id={{ $article['id'] }}">给粉丝发消息</a>
             <a href="/lable/fans?l_id={{ $article['id'] }}" class="btn btn-danger btn-small">为粉丝编辑标签</a>
             <a href="/lable/fans_list?l_id={{ $article['id'] }}" class="btn btn-danger btn-small">查看</a>
         </td>

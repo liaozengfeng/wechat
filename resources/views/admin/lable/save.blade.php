@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('title')
-分类添加
+标签
 @endsection
 
 @section('content')
