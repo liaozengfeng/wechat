@@ -109,9 +109,11 @@ class LableController extends Controller
         $l_id=$request->input("l_id");
         if ($request->isMethod("POST")){
             $content=$request->input("content");
-            dd($content);
             $url="https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token=".access_token();
-            $data=json_encode(["filter"=>['is_to_all'=>"false","tag_id"=>2],"text"=>["content"=>$content],"content"=>"text"]);
+            $data=json_encode(["filter"=>['is_to_all'=>false,"tag_id"=>$l_id],"text"=>["content"=>$content],"msgtype"=>"text"],JSON_UNESCAPED_UNICODE);
+            $res=curl_post($url,$data);
+            $res=json_decode($res,true,JSON_UNESCAPED_UNICODE);
+            dd($res);
         }
         return view("admin.lable.send_news",['l_id'=>$l_id]);
     }
