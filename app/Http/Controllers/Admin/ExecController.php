@@ -19,8 +19,10 @@ class ExecController extends Controller
             $content='去你的吧!!!';
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
             $content="欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="1234"){
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="积分"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."4WKzuMmwi4JMTrU-Mw7oIQcsTzYYTQb_fEhKKtV6pX-gE3m76PKdXJbTQtJkR0wW"."</MediaId></Image></xml>";exit;
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="兑换"){
+            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>'oA0YvEnRdTEaUgvQTB-RtFtsQ5EJMU_uF8dw7tnZEXJdeE_A3BX4vWDixzVvqlSS'</MediaId></Voice></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="支付"){
             $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="你好"){
