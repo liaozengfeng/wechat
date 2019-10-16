@@ -47,7 +47,7 @@ function curl_File($url,$poth)
     curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
     curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
     curl_setopt($curl,CURLOPT_POST,true);
-    $data['media']=new \CURLFile(realpath($poth));
+
     curl_setopt($curl,CURLOPT_POSTFIELDS,$data);
     $result = curl_exec($curl);
     curl_close($curl);

@@ -77,8 +77,8 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::get('/logout', 'Admin\UserController@logout')->name('logout');
 
     Route::get('/send', 'Admin\UserController@send');
-    Route::any('/admin/upload', 'Admin\uploadController@upload');
-    Route::any('/admin/upload_list', 'Admin\uploadController@upload_list');
+    Route::any('/admin/upload', 'Admin\UploadController@upload');
+    Route::any('/admin/upload_list', 'Admin\UploadController@upload_list');
 
 });
 Route::any('/exec/exec','Admin\ExecController@exec');

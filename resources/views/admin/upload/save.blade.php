@@ -23,6 +23,14 @@
             <input type="file" class="form-control" name="upload_file" style="display:none;" id="uploadField">
             <button class="btn btn-warning" id="img" type="button">上传文件</button>
         </div>
+        <div class="form-group">
+            <label for="is_hot">方式:</label>
+
+            <input type="radio" name="store" value="1" checked>缓存
+            <input type="radio" name="store" value="2">永久
+
+
+        </div>
         <button type="submit" class="btn btn-primary">保存</button>
     </form>
 @endsection
