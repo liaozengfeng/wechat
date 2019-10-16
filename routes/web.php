@@ -74,11 +74,11 @@ Route::group(['middleware'=>['CheckLogin']],function(){
 
 
     //注册 登录
-    Route::get('/logout', 'admin\UserController@logout')->name('logout');
+    Route::get('/logout', 'Admin\UserController@logout')->name('logout');
 
-    Route::get('/send', 'admin\UserController@send');
-    Route::any('/admin/upload', 'admin\uploadController@upload');
-    Route::any('/admin/upload_list', 'admin\uploadController@upload_list');
+    Route::get('/send', 'Admin\UserController@send');
+    Route::any('/admin/upload', 'Admin\uploadController@upload');
+    Route::any('/admin/upload_list', 'Admin\uploadController@upload_list');
 
 });
 Route::any('/exec/exec','Admin\ExecController@exec');
