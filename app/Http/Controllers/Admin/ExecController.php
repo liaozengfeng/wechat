@@ -22,7 +22,7 @@ class ExecController extends Controller
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="积分"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."4WKzuMmwi4JMTrU-Mw7oIQcsTzYYTQb_fEhKKtV6pX-gE3m76PKdXJbTQtJkR0wW"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="兑换"){
-            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>"."oA0YvEnRdTEaUgvQTB-RtFtsQ5EJMU_uF8dw7tnZEXJdeE_A3BX4vWDixzVvqlSS"."</MediaId></Voice></xml>";exit;
+            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>"."QqpDN4vzCAPFIRZ2vOd2YANSvR4qMqERGzg6fF-Fp4anc2_Eq_YM6q1QZX0qqoa9"."</MediaId></Voice></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="支付"){
             $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="你好"){
