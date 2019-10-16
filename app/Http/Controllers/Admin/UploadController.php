@@ -15,7 +15,7 @@ class UploadController extends Controller
             if (!$request->hasFile("upload_file")) {
                 dd("没有文件被上传");
             }
-            if ($request->input("video")){
+            if ($request->input("type")=="video"){
                 $data['description']=[
                     "title"=>$title,
                     "introduction"=>$content,
@@ -32,11 +32,10 @@ class UploadController extends Controller
                 $re = curl_File($url,$data);
                 $res = json_decode($re, 1);
                 if (!isset($res['errcode'])){
-                    $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>"/storage/app/upload/".$type.$file_name,"addtime"=>time()];
+                    $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>"/storage/app/upload/".$type.$file_name,"addtime"=>time(),"data_type"=>1];
                     $ress=UploadModel::create($info);
                     if ($ress){
                         $request->session()->put("media_id", $res['media_id']);
-                        dd(session("media_id"));
                         return redirect("/admin/upload");
                     }
                 }
@@ -45,17 +44,20 @@ class UploadController extends Controller
                 $re = curl_File($url,$data);
                 $res = json_decode($re, 1);
                 dd($res);
+                $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>$res['url'],"addtime"=>time(),"data_type"=>2];
+                $ress=UploadModel::create($info);
+                if ($ress){
+                    $request->session()->put("media_id", $res['media_id']);
+                    return redirect("/admin/upload");
+                }
             }
         }
         return view("admin.upload.save");
     }
 
     public function upload_list(Request $request){
-        $url="https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=".access_token();
-        $data=json_encode(["type"=>"voice","offset"=>"0","count"=>"2"],JSON_UNESCAPED_UNICODE);
-        $re = curl_post($url,$data);
-        $res=json_decode($re,1);
-        dd($res);
+        $info=UploadModel::all()->toArray();
+        return view("admin.upload.upload_list",['info'=>$info]);
     }
 
 }

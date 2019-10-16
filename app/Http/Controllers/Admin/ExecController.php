@@ -24,17 +24,7 @@ class ExecController extends Controller
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="音乐"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>"."QqpDN4vzCAPFIRZ2vOd2YANSvR4qMqERGzg6fF-Fp4anc2_Eq_YM6q1QZX0qqoa9"."</MediaId></Voice></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="视频"){
-            echo "<xml>
-  <ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName>
-  <FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName>
-  <CreateTime>".time()."</CreateTime>
-  <MsgType><![CDATA[video]]></MsgType>
-  <Video>
-    <MediaId>"."CkP8yaVLM1jc4fJ1OLCIRFzXIkBo_CnqYMiSBEr2ifSB0TcTImtadya25W8QQHF1"."</MediaId>
-    <Title>"."今日俺バンド - 男の勲章"."</Title>
-    <Description>"."什么 这怎么可能嘛 就那种 就她 就理子那种可笑的名字啊 还嚣张的要命 一副高高在上的样子 那什么 她跑来挑衅的时候 眼睛都在闪闪发光啊 真的闪闪发光哦 真的是闪闪发光哦 那什么 真的是 那什么 是星星吗 满天的星空吗 满天的星星 那什么 都在她的眼睛里"."</Description>
-  </Video>
-</xml>";exit;
+            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[video]]></MsgType><Video><MediaId>"."CkP8yaVLM1jc4fJ1OLCIRFzXIkBo_CnqYMiSBEr2ifSB0TcTImtadya25W8QQHF1"."</MediaId><Title>"."今日俺バンド - 男の勲章"."</Title><Description>"."什么 这怎么可能嘛 就那种 就她 就理子那种可笑的名字啊 还嚣张的要命 一副高高在上的样子 那什么 她跑来挑衅的时候 眼睛都在闪闪发光啊 真的闪闪发光哦 真的是闪闪发光哦 那什么 真的是 那什么 是星星吗 满天的星空吗 满天的星星 那什么 都在她的眼睛里"."</Description></Video></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="支付"){
             $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="你好"){

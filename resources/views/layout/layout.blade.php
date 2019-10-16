@@ -119,9 +119,9 @@
             <a class="dropdown-item" href="/lable/save">标签添加</a>
             <a class="dropdown-item" href="/lable/index">标签展示</a>
             <a class="dropdown-item" href="/admin/upload">素材添加</a>
+            <a class="dropdown-item" href="/admin/upload_list">素材展示</a>
         </div>
     </div>
-
 </div>
 
       @show
