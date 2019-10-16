@@ -40,14 +40,13 @@ function access_token(){
     return $url;
 }
 
-function curl_File($url,$poth)
+function curl_File($url,$data)
 {
     $curl = curl_init($url);
     curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
     curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
     curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
     curl_setopt($curl,CURLOPT_POST,true);
-
     curl_setopt($curl,CURLOPT_POSTFIELDS,$data);
     $result = curl_exec($curl);
     curl_close($curl);
