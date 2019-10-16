@@ -25,7 +25,7 @@ class ShopController extends Controller
     public function save(Request $request){
 
         if($request->isMethod('POST')){
-
+        return redirect();
             //上传文件
 
             $path = $request->file('shop_img')->store('imgs');

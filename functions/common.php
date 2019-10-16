@@ -40,6 +40,20 @@ function access_token(){
     return $url;
 }
 
+function curl_File($url,$poth)
+{
+    $curl = curl_init($url);
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
+    curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
+    curl_setopt($curl,CURLOPT_POST,true);
+    $data['media']=new \CURLFile(realpath($poth));
+    curl_setopt($curl,CURLOPT_POSTFIELDS,$data);
+    $result = curl_exec($curl);
+    curl_close($curl);
+    return $result;
+}
+
 //清空公众号调用接口
 function aaa(){
     $url="https://api.weixin.qq.com/cgi-bin/clear_quota?access_token=".access_token();

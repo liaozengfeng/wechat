@@ -18,6 +18,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="f354ec9b-cff3-42dc-9db1-eb137459ed27" name="子龙" url="http://39.106.77.227">
+        <fileTransfer host="39.106.77.227" port="22" rootFolder="/data/wwwroot/default/lavarel" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

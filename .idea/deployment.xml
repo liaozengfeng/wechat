@@ -20,6 +20,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="子龙">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/wwwroot/default/lavarel" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>

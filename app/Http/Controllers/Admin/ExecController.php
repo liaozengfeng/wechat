@@ -15,7 +15,24 @@ class ExecController extends Controller
         //处理xml的加密
         $xml_obj = simplexml_load_string($info,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml_arr = (array)$xml_obj;
-        dd($xml_arr);
+        if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="unsubscribe"){
+            $content='去你的吧!!!';
+        }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
+            $content="欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="1234"){
+            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>".session('media_id')."</MediaId></Image></xml>";exit;
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="支付"){
+            $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="你好"){
+            $content="会说话吗?\n叫爹!!";
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="滚"){
+            $content="傻逼";
+        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="爹"){
+            $content="真乖!!";
+        }else if($xml_arr['MsgType']=='text'){
+            $content = "廖神支付!欢迎你!!";
+        }
+        echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[".$content."]]></Content></xml>";
 
     }
 }

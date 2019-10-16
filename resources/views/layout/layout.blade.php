@@ -54,7 +54,7 @@
   <div class="container">
     <h1>E-Commerce!</h1>
     <p>...</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">No development</a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">廖神</a></p>
   </div>
 </div>
 
@@ -112,12 +112,13 @@
 
     <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            标签管理
+            微信管理
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="/lable/save">标签添加</a>
             <a class="dropdown-item" href="/lable/index">标签展示</a>
+            <a class="dropdown-item" href="/admin/upload">素材添加</a>
         </div>
     </div>
 
