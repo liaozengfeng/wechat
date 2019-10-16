@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class uploadController extends Controller
+class UploadController extends Controller
 {
     public function upload(Request $request){
         if ($request->isMethod("POST")){
@@ -27,8 +27,8 @@ class uploadController extends Controller
 
     public function upload_list(Request $request){
         $url="https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=".access_token();
-        $data=json_encode(["type"=>"voice","offset"=>0,"count"=>2]);
-        $re = curl_File($url,$data);
+        $data=json_encode(["type"=>"voice","offset"=>"0","count"=>"2"],JSON_UNESCAPED_UNICODE);
+        $re = curl_post($url,$data);
         $res=json_decode($re,1);
         dd($res);
     }
