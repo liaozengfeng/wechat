@@ -95,13 +95,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="4" />
           <entry key="log" value="3" />
-          <entry key="php" value="3047" />
+          <entry key="php" value="3054" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="402" />
-          <entry key="PHP" value="2645" />
+          <entry key="PHP" value="2652" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>
@@ -136,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <caret line="24" column="309" selection-start-line="24" selection-start-column="309" selection-end-line="24" selection-end-column="309" />
             </state>
           </provider>
         </entry>
@@ -924,12 +924,12 @@
       <workItem from="1571216106670" duration="650000" />
       <workItem from="1571220215533" duration="1139000" />
       <workItem from="1571221436139" duration="1181000" />
-      <workItem from="1571222656721" duration="635000" />
+      <workItem from="1571222656721" duration="814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297755000" />
+    <option name="totallyTimeSpent" value="297934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -966,7 +966,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32908848" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.32908848" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.32908848" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17493297" />
@@ -1284,7 +1284,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <caret line="24" column="309" selection-start-line="24" selection-start-column="309" selection-end-line="24" selection-end-column="309" />
         </state>
       </provider>
     </entry>
