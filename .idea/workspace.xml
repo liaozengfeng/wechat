@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9437b41-5472-45ba-b51e-aa3cce387cf9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,13 +111,13 @@
         <counts>
           <entry key="env" value="9" />
           <entry key="log" value="26" />
-          <entry key="php" value="105" />
+          <entry key="php" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Blade" value="23" />
-          <entry key="PHP" value="82" />
+          <entry key="PHP" value="84" />
           <entry key="PLAIN_TEXT" value="35" />
         </counts>
       </usages-collector>
@@ -146,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
@@ -154,6 +154,24 @@
               <folding>
                 <element signature="e#46#74#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -234,7 +252,6 @@
         <option value="$PROJECT_DIR$/../app/routes/web.php" />
         <option value="&lt;abc7d9d9-2ce9-4879-aaca-7eebb3e5f591&gt;/app/Http/Controllers/Index/LoginController.php" />
         <option value="$PROJECT_DIR$/routes/index.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Index/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/admin/index.blade.php" />
@@ -274,6 +291,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" />
         <option value="&lt;abc7d9d9-2ce9-4879-aaca-7eebb3e5f591&gt;/app/Http/Controllers/Admin/IntegralController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php" />
       </list>
     </option>
   </component>
@@ -430,6 +448,13 @@
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
@@ -911,12 +936,12 @@
       <workItem from="1571306537340" duration="1068000" />
       <workItem from="1571307767808" duration="1172000" />
       <workItem from="1571308986750" duration="939000" />
-      <workItem from="1571310202126" duration="331000" />
+      <workItem from="1571310202126" duration="454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321443000" />
+    <option name="totallyTimeSpent" value="321566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -932,7 +957,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Structure" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19906166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19906166" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -953,7 +978,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32908848" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.32908848" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.32908848" />
     </layout>
     <layout-to-restore>
       <window_info anchor="top" id="Structure" order="0" weight="0.25" />
@@ -1049,13 +1074,6 @@
     <entry file="file://$PROJECT_DIR$/../app/resources/views/save.blade.php" />
     <entry file="file://$PROJECT_DIR$/../app/app/Models/UserModels.php" />
     <entry file="file://$PROJECT_DIR$/../app/resources/views/login.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1098,13 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1301,6 +1312,20 @@
           <folding>
             <element signature="e#46#74#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
