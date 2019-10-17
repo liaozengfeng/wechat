@@ -13,7 +13,7 @@ class IntegralController extends Controller
         $url="https://api.weixin.qq.com/cgi-bin/user/info?access_token=".access_token()."&openid=".$openid."&lang=zh_CN";
         $data=curl_get($url);
         $data=json_decode($data,1);
-        $info=['openid'=>$data['openid'],"name"=>$data['nickname'],"add_time"=>time(),"up_time"=>time()];
+        $info=['openid'=>$data['openid'],"name"=>$data['nickname'],"add_time"=>time(),"up_time"=>0];
         $res=IntegralModel::create($info);
         return $res;
     }
