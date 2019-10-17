@@ -20,16 +20,20 @@ class IntegralController extends Controller
 
     static public function integral_save($openid){
         $data=IntegralModel::where("openid",$openid)->first();
-        if (time() - $data->up_time>24*60*60){
+        if (time() - $data->up_time > 24*60*60 && time() - $data->up_time < 24*60*60*2){
+            dd($data->count);
             $count=$data->count+1;
             $integral=$count*5;
             $info=["count"=>$count,"up_time"=>time(),"integral"=>$integral];
             $res=Db::table("wechat_integral")->where("openid",$openid)->update($info);
+        }else if (time() - $data->up_time > 24*60*60*2){
+            $integral=$data->integral+5;
+            $info=["count"=>1,"up_time"=>time(),"integral"=>$integral];
+            $res=Db::table("wechat_integral")->where("openid",$openid)->update($info);
         }else{
             $res=false;
-            $integral=0;
         }
-        return ["res"=>$res,"integral"=>$integral];
+        return ["res"=>$res];
     }
 
     static public function integral_select($openid){
