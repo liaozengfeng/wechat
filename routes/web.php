@@ -79,6 +79,9 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::get('/send', 'Admin\UserController@send');
     Route::any('/admin/upload', 'Admin\UploadController@upload');
     Route::any('/admin/upload_list', 'Admin\UploadController@upload_list');
+    Route::any('/admin/download', 'Admin\UploadController@download');
+
+    Route::any('/admin/menu', 'Admin\MenuController@menu');
 
 });
 Route::any('/exec/exec','Admin\ExecController@exec');

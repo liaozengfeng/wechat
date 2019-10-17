@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UploadModel;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 class UploadController extends Controller
 {
     public function upload(Request $request){
@@ -31,23 +33,22 @@ class UploadController extends Controller
                 $url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=".access_token()."&type=" . $type;
                 $re = curl_File($url,$data);
                 $res = json_decode($re, 1);
-                if (!isset($res['errcode'])){
-                    $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>"/storage/app/upload/".$type.$file_name,"addtime"=>time(),"data_type"=>1];
-                    $ress=UploadModel::create($info);
-                    if ($ress){
-                        $request->session()->put("media_id", $res['media_id']);
                         return redirect("/admin/upload");
-                    }
-                }
             }else{
                 $url="https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=".access_token()."&type=".$type;
+                if($type=="video") {
+                    $data['description'] = json_encode($data['description'], JSON_UNESCAPED_UNICODE);
+                }
                 $re = curl_File($url,$data);
                 $res = json_decode($re, 1);
-                dd($res);
-                $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>$res['url'],"addtime"=>time(),"data_type"=>2];
+                if (!isset($res['url'])) {
+                    $path = "/storage/app/upload/" . $type . $file_name;
+                }else{
+                    $path=$res['url'];
+                }
+                $info=["medie_id"=>$res['media_id'],"type"=>$type,"path"=>$path,"addtime"=>time()];
                 $ress=UploadModel::create($info);
                 if ($ress){
-                    $request->session()->put("media_id", $res['media_id']);
                     return redirect("/admin/upload");
                 }
             }
@@ -56,8 +57,41 @@ class UploadController extends Controller
     }
 
     public function upload_list(Request $request){
+        if (!empty($request->input("type"))){
+            $type=$request->input('type');
+            $data=Db::table('upload')->where("type",$type)->get()->toArray();
+            return view("admin.upload.show",['info'=>$data]);
+        }
         $info=UploadModel::all()->toArray();
         return view("admin.upload.upload_list",['info'=>$info]);
+    }
+
+    public function download(Request $request){
+        $type=$request->input("type");
+        $file_name = time() . rand(1000, 9999) ;
+        $url="https://api.weixin.qq.com/cgi-bin/material/get_material?access_token=".access_token();
+        $data=json_encode(['media_id'=>$request->input("media_id")]);
+        $re=curl_post($url,$data);
+        if ($type=="video"){
+            $res=json_decode($re,1);
+            $opts=[
+                "http"=>[
+                    "method"=>"GET",
+                    "timeout"=>2
+                ],
+            ];
+            $context=stream_context_create($opts);
+            $re=file_get_contents($res['down_url'],false,$context);
+            $file_name.=".mp4";
+        }else if($type=="image"){
+            $file_name.=".jpg";
+        }else if($type=="voice"){
+            $file_name.=".mp3";
+        }
+        $res=Storage::put("/upload/".$type."/".$file_name,$re);
+        if ($res){
+            return redirect("/admin/upload_list");
+        }
     }
 
 }

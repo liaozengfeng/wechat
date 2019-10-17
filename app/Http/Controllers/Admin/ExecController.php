@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Admin\IntegralController;
 class ExecController extends Controller
 {
     public function exec(Request $request){
@@ -18,7 +18,10 @@ class ExecController extends Controller
         if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="unsubscribe"){
             $content='去你的吧!!!';
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
-            $content="欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+            $re=IntegralController::user_save($xml_arr['FromUserName']);
+            if ($re) {
+                $content = "欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+            }
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="图片"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."4WKzuMmwi4JMTrU-Mw7oIQcsTzYYTQb_fEhKKtV6pX-gE3m76PKdXJbTQtJkR0wW"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="音乐"){
@@ -33,6 +36,16 @@ class ExecController extends Controller
             $content="傻逼";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="爹"){
             $content="真乖!!";
+        }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="V1001_TODAY_MUSIC"){
+            $re=IntegralController::integral_save($xml_arr['FromUserName']);
+            if ($re['res']) {
+                $content = "签到成功!";
+            }else{
+                $content="今日已签到";
+            }
+        }else if ($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="V1002_TODAY_MUSIC"){
+            $re=IntegralController::integral_select($xml_arr['FromUserName']);
+                $content = "已有积分:".$re;
         }else if($xml_arr['MsgType']=='text'){
             $content = "廖神支付!欢迎你!!";
         }
