@@ -40,4 +40,9 @@ class IntegralController extends Controller
         $data=IntegralModel::where("openid",$openid)->first()->toArray();
         return $data['integral'];
     }
+
+    static public function user_del($openid){
+        $res=IntegralModel::where("openid",$openid)->delete();
+        return $res;
+    }
 }

@@ -16,7 +16,10 @@ class ExecController extends Controller
         $xml_obj = simplexml_load_string($info,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml_arr = (array)$xml_obj;
         if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="unsubscribe"){
-            $content='去你的吧!!!';
+            $re=IntegralController::user_del($xml_arr['FromUserName']);
+            if ($re){
+                $content='去你的吧!!!';
+            }
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
             $re=IntegralController::user_save($xml_arr['FromUserName']);
             if ($re) {
