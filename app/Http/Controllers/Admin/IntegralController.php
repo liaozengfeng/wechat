@@ -26,7 +26,7 @@ class IntegralController extends Controller
             $integral=$count*5;
             $info=["count"=>$count,"up_time"=>time(),"integral"=>$integral];
             $res=Db::table("wechat_integral")->where("openid",$openid)->update($info);
-        }else if (time() - $data->up_time > 24*60*60*2){
+        }else if (time() - $data->up_time > 24*60*60*2 || $data->count > 5){
             $integral=$data->integral+5;
             $info=["count"=>1,"up_time"=>time(),"integral"=>$integral];
             $res=Db::table("wechat_integral")->where("openid",$openid)->update($info);
