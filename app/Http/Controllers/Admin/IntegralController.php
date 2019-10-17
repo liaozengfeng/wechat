@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\models\IntegralModel;
+use App\Models\IntegralModel;
 use Illuminate\Support\Facades\DB;
 class IntegralController extends Controller
 {
@@ -19,9 +19,9 @@ class IntegralController extends Controller
     }
 
     static public function integral_save($openid){
-        $data=IntegralModel::where("openid",$openid)->first()->toArray();
-        if (time() - $data['up_time']>24*60*60){
-            $count=$data['count']+1;
+        $data=IntegralModel::where("openid",$openid)->first();
+        if (time() - $data->up_time>24*60*60){
+            $count=$data->count+1;
             $integral=$count*5;
             $info=["count"=>$count,"up_time"=>time(),"integral"=>$integral];
             $res=Db::table("wechat_integral")->where("openid",$openid)->update($info);
