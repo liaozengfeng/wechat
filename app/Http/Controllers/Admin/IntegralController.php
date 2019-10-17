@@ -20,7 +20,7 @@ class IntegralController extends Controller
 
     static public function integral_save($openid){
         $data=IntegralModel::where("openid",$openid)->first()->toArray();
-        if (time() - $data['up_time']>1000){
+        if (time() - $data['up_time']>24*60*60){
             $count=$data['count']+1;
             $integral=$count*5;
             $info=["count"=>$count,"up_time"=>time(),"integral"=>$integral];
