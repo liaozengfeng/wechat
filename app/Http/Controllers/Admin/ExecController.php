@@ -15,12 +15,17 @@ class ExecController extends Controller
         //处理xml的加密
         $xml_obj = simplexml_load_string($info,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml_arr = (array)$xml_obj;
+        //判断xml数据中的MsgType值为event 并且  Event值为 unsubscribe  说明用户取关了次公众号
         if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="unsubscribe"){
+            //当用户取关 调用IntegralController控制器中的user_del方法 删除数据库中的该用户数据
             $re=IntegralController::user_del($xml_arr['FromUserName']);
+            //删除成功
             if ($re){
                 $content='去你的吧!!!';
             }
+            //判断xml数据中的MsgType值为event 并且  Event subscribe  说明用户关注了次公众号
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
+            //当用户管制公众号时 调用IntegralController控制器中的user_save方法 根据用户openid添加用户信息
             $re=IntegralController::user_save($xml_arr['FromUserName']);
             if ($re) {
                 $content = "欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
@@ -39,16 +44,24 @@ class ExecController extends Controller
             $content="傻逼";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="爹"){
             $content="真乖!!";
+            //判断xml数据中的MsgType值为event 并且  EventKey键值为V1001_TODAY_MUSIC  说明用户点击了签到
         }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="V1001_TODAY_MUSIC"){
+            //用户点击签到 调用IntegralController控制器中的integral_save方法 根据openid修改数据库
+            //$xml_arr['FromUserName'] 用户的openid
             $re=IntegralController::integral_save($xml_arr['FromUserName']);
             if ($re['res']) {
+                //修改成功
                 $content = "签到成功!";
             }else{
+                //修改失败
                 $content="今日已签到";
             }
+            //判断xml数据中的MsgType值为event 并且 EventKey键值为V1002_TODAY_MUSIC  说明用户点击了查询积分
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="V1002_TODAY_MUSIC"){
+            //用户点击查看积分时 调用IntegralController控制器中的integral_select方法 根据用户openid查询数据库 返回积分
             $re=IntegralController::integral_select($xml_arr['FromUserName']);
-                $content = "已有积分:".$re;
+            //拼接回复数据
+            $content = "已有积分:".$re;
         }else if($xml_arr['MsgType']=='text'){
             $content = "廖神支付!欢迎你!!";
         }
