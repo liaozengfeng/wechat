@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\IntegralModel;
@@ -21,7 +19,6 @@ class IntegralController extends Controller
         //返回添加结果
         return $res;
     }
-
     static public function integral_save($openid){
         //根据$openid查询数据库
         $data=IntegralModel::where("openid",$openid)->first();
@@ -49,14 +46,12 @@ class IntegralController extends Controller
         }
         return ["res"=>$res];
     }
-
     static public function integral_select($openid){
         //根据openid查询数据库
         $data=IntegralModel::where("openid",$openid)->first()->toArray();
         //返回该用户已有积分
         return $data['integral'];
     }
-
     static public function user_del($openid){
         //用户取关 删除数据库数据
         $res=IntegralModel::where("openid",$openid)->delete();
