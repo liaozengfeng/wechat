@@ -19,7 +19,7 @@ class BrandController extends Controller
 
         $da= new BrandModel;
         $list= $da->paginate(3);
-        return view('Admin.brand.index',['list'=>$list]);
+        return view('admin.brand.index',['list'=>$list]);
 
     }
 
@@ -56,7 +56,7 @@ class BrandController extends Controller
                 return redirect('brand/index');
             }
         }
-         return view('Admin.brand._save');
+         return view('admin.brand._save');
     }
 
 
@@ -103,6 +103,6 @@ class BrandController extends Controller
                 session()->flash('brand',"更新成功,用户id为".$id);
                 return redirect('brand/index');
             } 
-             return view('Admin.brand._save');
+             return view('admin.brand._save');
     }
 }
