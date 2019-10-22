@@ -18,13 +18,7 @@
                 <td>{{ $v['integral'] }}</td>
                 <td><img src="{{ $v['qrcode'] }}" alt="" width="50px"></td>
                 <td>
-                    <a href="
-                    @if(!empty($v['qrcode']))
-                            javascript:;
-                    @else
-                            /admin/qrcode?openid={{ $v['openid'] }}
-                       @endif
-                  ">生成二维码</a>
+                    <a href="/admin/qrcode?openid={{ $v['openid'] }}">生成二维码</a>
                 </td>
             </tr>
         @endforeach
