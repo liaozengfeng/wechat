@@ -97,7 +97,7 @@ class UploadController extends Controller
     }
 
     public function qrcode_list(Request $request){
-        $info=IntegralModel::get()->toArray();
+        $info=IntegralModel::where("attention",1)->get()->toArray();
         return view("admin.upload.fans_list",['data'=>$info]);
     }
 
