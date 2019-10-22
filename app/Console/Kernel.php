@@ -25,8 +25,12 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            \log::Info("231121");
-        })->everyMinute();
+//            \Log::Info("231121");
+//            $url="https://api.weixin.qq.com/cgi-bin/user/get?access_token=".access_token()."&next_openid=";
+//            $data=curl_get($url);
+//            $data=json_decode($data,1);
+//            $openid=$data['openid'];
+        })->dailyAt('20:00');;
     }
 
     /**

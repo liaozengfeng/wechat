@@ -81,6 +81,11 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::any('/admin/upload_list', 'Admin\UploadController@upload_list');
     Route::any('/admin/download', 'Admin\UploadController@download');
 
+    //展示粉丝
+    Route::any('/admin/qrcode_list', 'Admin\UploadController@qrcode_list');
+    //生成二维码
+    Route::any('/admin/qrcode', 'Admin\UploadController@qrcode');
+
     Route::any('/admin/menu_save', 'Admin\MenuController@menu_save');
     Route::any('/admin/menu_next', 'Admin\MenuController@menu_next');
     Route::any('/admin/menu', 'Admin\MenuController@menu');

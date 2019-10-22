@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\models\IntegralModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UploadModel;
@@ -39,6 +40,7 @@ class UploadController extends Controller
                 if($type=="video") {
                     $data['description'] = json_encode($data['description'], JSON_UNESCAPED_UNICODE);
                 }
+//                dd($data);
                 $re = curl_File($url,$data);
                 $res = json_decode($re, 1);
                 if (!isset($res['url'])) {
@@ -91,6 +93,35 @@ class UploadController extends Controller
         $res=Storage::put("/upload/".$type."/".$file_name,$re);
         if ($res){
             return redirect("/admin/upload_list");
+        }
+    }
+
+    public function qrcode_list(Request $request){
+        $info=IntegralModel::get()->toArray();
+        return view("admin.upload.fans_list",['data'=>$info]);
+    }
+
+    public function qrcode(Request $request){
+        $openid=$request->input("openid");
+        $url="https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=".access_token();
+        $data=[
+            "action_name"=>"QR_LIMIT_STR_SCENE",
+            "action_info"=>[
+                'scene'=>[
+                    "scene_str"=>$openid
+                ]
+            ]
+        ];
+        $data=json_encode($data);
+        $re=curl_post($url,$data);
+        $re=json_decode($re,1);
+        $get_curl="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=".$re['ticket'];
+        $res=curl_get($get_curl);
+        $res=Storage::put("/upload/qrcode/".$openid.".jpg",$res);
+        $info=['qrcode'=>"/storage/upload/qrcode/".$openid.".jpg"];
+        $resl=IntegralModel::where("openid",$openid)->update($info);
+        if ($resl){
+            return redirect("/admin/qrcode_list");
         }
     }
 

@@ -46,15 +46,17 @@ class IntegralController extends Controller
         }
         return ["res"=>$res];
     }
+
     static public function integral_select($openid){
         //根据openid查询数据库
         $data=IntegralModel::where("openid",$openid)->first()->toArray();
         //返回该用户已有积分
         return $data['integral'];
     }
+
     static public function user_del($openid){
         //用户取关 删除数据库数据
-        $res=IntegralModel::where("openid",$openid)->delete();
+        $res=IntegralModel::where("openid",$openid)->update(['attention'=>0]);
         return $res;
     }
 }
