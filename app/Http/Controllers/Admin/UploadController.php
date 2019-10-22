@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\models\IntegralModel;
+use App\Models\IntegralModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UploadModel;
