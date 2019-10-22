@@ -23,11 +23,13 @@ class ExecController extends Controller
             }
             //判断xml数据中的MsgType值为event 并且  Event subscribe  说明用户关注了次公众号
         }else if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="subscribe"){
-            //当用户管制公众号时 调用IntegralController控制器中的user_save方法 根据用户openid添加用户信息
-            $re=IntegralController::user_save($xml_arr['FromUserName']);
-            if ($re) {
-                $content = "欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+            if (isset($xml_arr['Ticket'])){
+                $res=IntegralController::user_add($xml_arr['FromUserName'],$xml_arr['EventKey']);
+            }else {
+                //当用户管制公众号时 调用IntegralController控制器中的user_save方法 根据用户openid添加用户信息
+                $re = IntegralController::user_save($xml_arr['FromUserName']);
             }
+            $content = "欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="图片"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="音乐"){

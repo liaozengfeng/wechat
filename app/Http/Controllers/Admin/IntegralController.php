@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\DB;
 class IntegralController extends Controller
 {
     //用户添加
-    static public function user_save($openid){
+    static public function user_save($openid,$guide=""){
         //根据openid查询公众粉丝个人信息
         $url="https://api.weixin.qq.com/cgi-bin/user/info?access_token=".access_token()."&openid=".$openid."&lang=zh_CN";
         $data=curl_get($url);
         //json_decode解密数据
         $data=json_decode($data,1);
         //将个人信息拼成一维数组添加进数据库
-        $info=['openid'=>$data['openid'],"name"=>$data['nickname'],"add_time"=>time(),"up_time"=>0];
+        $info=['openid'=>$data['openid'],"name"=>$data['nickname'],"add_time"=>time(),"up_time"=>0,"guide"=>$guide];
         $res=IntegralModel::create($info);
         //返回添加结果
         return $res;
@@ -57,6 +57,20 @@ class IntegralController extends Controller
     static public function user_del($openid){
         //用户取关 删除数据库数据
         $res=IntegralModel::where("openid",$openid)->update(['attention'=>0]);
+        return $res;
+    }
+
+
+    static public function user_add($openid,$eventkey){
+        $info=IntegralModel::where("openid",$openid)->first();
+        $res=explode("_",$eventkey);
+        if(empty($info)){
+            $re=self::user_save($openid,$res[1]);
+            if ($re){
+                $num=IntegralModel::where("guide",$res[1])->count();
+                $res=IntegralModel::where("openid",$res[1])->update(['performance'=>$num]);
+            }
+        }
         return $res;
     }
 }

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9437b41-5472-45ba-b51e-aa3cce387cf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/upload/fans_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,11 +90,11 @@
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="9" />
-          <entry key="project.open.time.7" value="13" />
+          <entry key="project.open.time.6" value="10" />
+          <entry key="project.open.time.7" value="14" />
           <entry key="project.open.time.8" value="12" />
           <entry key="project.open.time.9" value="17" />
-          <entry key="project.opened" value="96" />
+          <entry key="project.opened" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -105,13 +102,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="16" />
           <entry key="log" value="3" />
-          <entry key="php" value="12232" />
+          <entry key="php" value="12727" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="2678" />
-          <entry key="PHP" value="9554" />
+          <entry key="PHP" value="10049" />
           <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
@@ -151,11 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="380">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -163,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
+            <state relative-caret-position="2242">
               <caret line="123" column="50" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
               <folding>
                 <element signature="e#45#74#0#PHP" expanded="true" />
@@ -181,11 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/upload/fans_list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -193,8 +190,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="422">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#44#72#0#PHP" expanded="true" />
               </folding>
@@ -288,13 +285,13 @@
         <option value="$PROJECT_DIR$/resources/views/admin/menu/menu_save.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/menu/save.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" />
         <option value="&lt;abc7d9d9-2ce9-4879-aaca-7eebb3e5f591&gt;/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/upload/fans_list.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" />
       </list>
     </option>
   </component>
@@ -942,12 +939,14 @@
       <workItem from="1571712767016" duration="859000" />
       <workItem from="1571726839942" duration="1170000" />
       <workItem from="1571728035280" duration="1182000" />
-      <workItem from="1571729245374" duration="298000" />
+      <workItem from="1571729245374" duration="1194000" />
+      <workItem from="1571730457091" duration="1193000" />
+      <workItem from="1571731691655" duration="506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345608000" />
+    <option name="totallyTimeSpent" value="348203000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -963,7 +962,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Structure" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22855228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23525469" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1295,10 +1294,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="2242">
+          <caret line="123" column="50" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
+          <folding>
+            <element signature="e#45#74#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1309,30 +1311,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/upload/fans_list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/IntegralController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="422">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#44#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="123" column="50" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
-          <folding>
-            <element signature="e#45#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/upload/fans_list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="380">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
