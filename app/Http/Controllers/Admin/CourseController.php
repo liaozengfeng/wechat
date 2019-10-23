@@ -33,9 +33,10 @@ class CourseController extends Controller
         $data=$request->input();
         unset($data['_token']);
         $info=IntegralModel::where("openid",$data['openid'])->first()->toArray();
-        if ($info['course_count']>3||date("Y-m-d",time())>2019-10-24){
+        if ($info['course_count']>3||date("Y-m-d",time())>"2019-10-24"){
             echo "无法修改";
         }else{
+            $data['course_count']=$info['course_count']+1;
             $res=IntegralModel::where("openid",$data['openid'])->update($data);
             echo "修改成功";
         }
