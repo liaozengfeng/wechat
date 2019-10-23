@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\CourseModel;
-use App\models\IntegralModel;
+use App\Models\IntegralModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -44,7 +44,6 @@ class CourseController extends Controller
 
     static public function info_list($openid){
         $info=IntegralModel::where("openid",$openid)->first()->toArray();
-
         if (!empty($info['one'])){
             $data=CourseModel::get()->toArray();
             $arr['name']=$info['name'];

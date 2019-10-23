@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9437b41-5472-45ba-b51e-aa3cce387cf9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/course/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/course/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,13 +102,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="19" />
           <entry key="log" value="5" />
-          <entry key="php" value="15312" />
+          <entry key="php" value="15313" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="2970" />
-          <entry key="PHP" value="12342" />
+          <entry key="PHP" value="12343" />
           <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
@@ -154,14 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="58" column="30" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="30" />
-              <folding>
-                <element signature="e#46#73#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="95">
+              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -184,11 +177,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="70" column="139" selection-start-line="70" selection-start-column="139" selection-end-line="70" selection-end-column="139" />
+            <state relative-caret-position="389">
+              <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -293,8 +286,8 @@
         <option value="$PROJECT_DIR$/app/Models/CourseModel.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/course/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php" />
       </list>
     </option>
   </component>
@@ -460,6 +453,12 @@
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel" type="b2602c69:ProjectViewProjectNode" />
@@ -981,12 +980,12 @@
       <workItem from="1571820028965" duration="1157000" />
       <workItem from="1571824903341" duration="1135000" />
       <workItem from="1571826311260" duration="1161000" />
-      <workItem from="1571827521821" duration="780000" />
+      <workItem from="1571827521821" duration="1117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364648000" />
+    <option name="totallyTimeSpent" value="364985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1403,20 +1402,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="30" />
-          <folding>
-            <element signature="e#46#73#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="389">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExecController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CourseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="70" column="139" selection-start-line="70" selection-start-column="139" selection-end-line="70" selection-end-column="139" />
+        <state relative-caret-position="95">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
