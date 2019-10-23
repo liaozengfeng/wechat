@@ -91,6 +91,8 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::any('/admin/menu_list', 'Admin\MenuController@menu_list');
 
 });
+
+
 Route::any('/admin/menu', 'Admin\MenuController@menu');
 
 //课程展示
