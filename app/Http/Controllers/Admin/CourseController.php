@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class CourseController extends Controller
 {
     public function list(Request $request){
-        $url=urlencode(env('APP_URL')."/course/list_do");
+        $url=urlencode(env('APP_URL')."course/list_do");
         header("location:https://open.weixin.qq.com/connect/oauth2/authorize?appid=".env('WECHAT_APPID')."&redirect_uri=$url&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect");
     }
 

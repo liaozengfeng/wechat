@@ -37,7 +37,7 @@ class MenuController extends Controller
                ],[
                    "type"=>"view",
                    "name"=>"课程管理",
-                   "url"=>"https://laravel.com/course/list",
+                   "url"=>"http://47.93.25.230/course/list",
                ],[
                    "type"=>"click",
                    "name"=>"查看课程",

@@ -88,13 +88,10 @@ Route::group(['middleware'=>['CheckLogin']],function(){
 
     Route::any('/admin/menu_save', 'Admin\MenuController@menu_save');
     Route::any('/admin/menu_next', 'Admin\MenuController@menu_next');
-    Route::any('/admin/menu', 'Admin\MenuController@menu');
     Route::any('/admin/menu_list', 'Admin\MenuController@menu_list');
 
-
-
-
 });
+Route::any('/admin/menu', 'Admin\MenuController@menu');
 
 //课程展示
 Route::any('/course/list', 'Admin\CourseController@list');
