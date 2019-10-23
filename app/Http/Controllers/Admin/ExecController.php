@@ -64,8 +64,12 @@ class ExecController extends Controller
             $content = "已有积分:".$re;
         }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="See_the_course"){
             //查看课程
-        }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="course_management"){
-            $content="3232";
+            $info=CourseController::info_list($xml_arr['FromUserName']);
+            if(empty($info)){
+                $content="您暂未选择课程,请选择课程!";
+            }else{
+                $content="你好!".$info['name']."同学,你当前的课程安排如下\n第一节课:".$info['one']."\n第二节课:".$info['two']."\n第三节课:".$info['three']."\n第四节课:".$info['four'];
+            }
         }else if($xml_arr['MsgType']=='text'){
             $content = "廖神支付!欢迎你!!";
         }

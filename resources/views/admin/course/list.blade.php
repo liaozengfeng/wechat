@@ -7,17 +7,21 @@
         <div class="wy-header-icon-back"><span></span></div>
         <div class="wy-header-title">编辑地址</div>
     </header>
-    <form>
+    <form action="/course/list_add" method="post">
     <div class="weui-content">
         <div class="weui-cells weui-cells_form wy-address-edit">
             <div class="weui-cell">
+                <input type="hidden" value="{{ $openid }}" name="openid">
                 @csrf
                 <div class="weui-cell__hd"><label class="weui-label wy-lab">第一节课</label></div>
                 <div class="weui-cell__bd">
                     <select name="one" width="50px">
-                        <option value="">请选择</option>
                         @foreach($info as $v)
-                            <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @if(!empty($data['one'])&&$data['one']==$v['id'])
+                                <option value="{!! $v['id'] !!}" selected>{!! $v['name'] !!}</option>
+                            @else
+                                <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -26,9 +30,12 @@
                 <div class="weui-cell__hd"><label class="weui-label wy-lab">第二节课</label></div>
                 <div class="weui-cell__bd">
                     <select name="two" width="50px">
-                        <option value="">请选择</option>
                         @foreach($info as $v)
-                            <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @if(!empty($data['two'])&&$data['two']==$v['id'])
+                                <option value="{!! $v['id'] !!}" selected>{!! $v['name'] !!}</option>
+                            @else
+                                <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -37,9 +44,12 @@
                 <div class="weui-cell__hd"><label class="weui-label wy-lab">第三节课</label></div>
                 <div class="weui-cell__bd">
                     <select name="three" width="50px">
-                        <option value="">请选择</option>
                         @foreach($info as $v)
-                            <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @if(!empty($data['three'])&&$data['three']==$v['id'])
+                                <option value="{!! $v['id'] !!}" selected>{!! $v['name'] !!}</option>
+                            @else
+                                <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -48,9 +58,12 @@
                 <div class="weui-cell__hd"><label class="weui-label wy-lab">第四节课</label></div>
                 <div class="weui-cell__bd">
                     <select name="four" width="50px">
-                        <option value="">请选择</option>
                         @foreach($info as $v)
-                            <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @if(!empty($data['four'])&&$data['four']==$v['id'])
+                                <option value="{!! $v['id'] !!}" selected>{!! $v['name'] !!}</option>
+                            @else
+                                <option value="{!! $v['id'] !!}">{!! $v['name'] !!}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

@@ -98,6 +98,8 @@ Route::group(['middleware'=>['CheckLogin']],function(){
 
 //课程展示
 Route::any('/course/list', 'Admin\CourseController@list');
+Route::any('/course/list_do', 'Admin\CourseController@list_do');
+Route::any('/course/list_add', 'Admin\CourseController@list_add');
 
 
 Route::any('/admin/jssdk', 'Admin\JssdkController@jssdk');
