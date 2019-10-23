@@ -25,11 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-//            \Log::Info("231121");
-//            $url="https://api.weixin.qq.com/cgi-bin/user/get?access_token=".access_token()."&next_openid=";
-//            $data=curl_get($url);
-//            $data=json_decode($data,1);
-//            $openid=$data['openid'];
+
         })->dailyAt('20:00');;
     }
 
@@ -41,7 +37,53 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
-
+        $user_info=IntegralModel::get()->toArray();
+        $data=CourseModel::get()->toArray();
+        $url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".access_token();
+        foreach ($user_info as $ke=>$va){
+            if (!empty($va['one'])){
+                $arr['name']=$va['name'];
+                $arr['openid']=$va['openid'];
+                foreach($data as $k=>$v) {
+                    if ($va['one'] == $v['id']) {
+                        $arr['one'] = $v['name'];
+                    } else if ($va['two'] == $v['id']) {
+                        $arr['two'] = $v['name'];
+                    } else if ($va['three'] == $v['id']) {
+                        $arr['three'] = $v['name'];
+                    } else if ($va['four'] == $v['id']) {
+                        $arr['four'] = $v['name'];
+                    }
+                }
+                $aaa=[
+                    "touser"=>$arr['openid'],
+                    "template_id"=>" 	UCvamyRtD2jXBN_jxOVbbWaO0H_7OP26qwvltPALbac",
+                    "data"=>[
+                        "name"=>[
+                            "value"=>$arr['name'],
+                            "color"=>"red",
+                            ],"one"=>[
+                            "value"=>$arr['one'],
+                            "color"=>"red",
+                        ],"two"=>[
+                            "value"=>$arr['two'],
+                            "color"=>"red",
+                        ],"three"=>[
+                            "value"=>$arr['three'],
+                            "color"=>"red",
+                        ],"four"=>[
+                            "value"=>$arr['four'],
+                            "color"=>"red",
+                        ],
+                    ]
+                ];
+                $aaa=json_encode($aaa,JSON_UNESCAPED_UNICODE);
+                $re=curl_post($url,$aaa);
+                $re=json_decode($re,1);
+                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
+                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$re,FILE_APPEND);
+            }
+        }
         require base_path('routes/console.php');
     }
 }

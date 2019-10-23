@@ -47,17 +47,7 @@ class CourseController extends Controller
         $info=IntegralModel::where("openid",$openid)->first()->toArray();
         if (!empty($info['one'])){
             $data=CourseModel::get()->toArray();
-            $arr['name']=$info['name'];
-            foreach($data as $k=>$v){
-                if ($info['one']==$v['id']){
-                    $arr['one']=$v['name'];
-                }else if($info['two']==$v['id']){
-                    $arr['two']=$v['name'];
-                }else if($info['three']==$v['id']){
-                    $arr['three']=$v['name'];
-                }else if($info['four']==$v['id']){
-                    $arr['four']=$v['name'];
-                }
+
             }
         }else{
             $arr=[];
