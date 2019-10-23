@@ -40,6 +40,22 @@ function access_token(){
     return $url;
 }
 
+function jssdk_ticket(){
+    $key = 'wechat_jsapi_ticket';
+    //判断缓存是否存在
+    if(\Cache::has($key)) {
+        //取缓存
+        $wechat_jsapi_ticket = \Cache::get($key);
+    }else{
+        //取不到，调接口，缓存
+        $re = file_get_contents('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='.access_token().'&type=jsapi');
+        $result = json_decode($re,true);
+        \Cache::put($key,$result['ticket'],$result['expires_in']);
+        $wechat_jsapi_ticket = $result['ticket'];
+    }
+    return $wechat_jsapi_ticket;
+}
+
 function curl_File($url,$data)
 {
     $curl = curl_init($url);

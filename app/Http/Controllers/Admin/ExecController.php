@@ -27,9 +27,9 @@ class ExecController extends Controller
                 $res=IntegralController::user_add($xml_arr['FromUserName'],$xml_arr['EventKey']);
             }else {
                 //当用户管制公众号时 调用IntegralController控制器中的user_save方法 根据用户openid添加用户信息
-                $re = IntegralController::user_save($xml_arr['FromUserName']);
+                $res = IntegralController::user_save($xml_arr['FromUserName']);
             }
-            $content = "欢迎关注:廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+            $content = "欢迎关注:".$res."廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="图片"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="音乐"){
@@ -62,6 +62,10 @@ class ExecController extends Controller
             $re=IntegralController::integral_select($xml_arr['FromUserName']);
             //拼接回复数据
             $content = "已有积分:".$re;
+        }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="See_the_course"){
+            //查看课程
+        }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="course_management"){
+            $content="3232";
         }else if($xml_arr['MsgType']=='text'){
             $content = "廖神支付!欢迎你!!";
         }

@@ -34,7 +34,15 @@ class MenuController extends Controller
                 "type"=>"view",
                 "name"=>"网易云音乐",
                 "url"=>"https://music.163.com/"
-               ]
+               ],[
+                   "type"=>"view",
+                   "name"=>"课程管理",
+                   "url"=>"https://laravel.com/course/list",
+               ],[
+                   "type"=>"click",
+                   "name"=>"查看课程",
+                   "key"=>"See_the_course"
+               ],
            ]
        ],
 

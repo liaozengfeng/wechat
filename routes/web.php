@@ -92,7 +92,17 @@ Route::group(['middleware'=>['CheckLogin']],function(){
     Route::any('/admin/menu_list', 'Admin\MenuController@menu_list');
 
 
+
+
 });
+
+//课程展示
+Route::any('/course/list', 'Admin\CourseController@list');
+
+
+Route::any('/admin/jssdk', 'Admin\JssdkController@jssdk');
+
+
 //微信签到
 Route::any('/admin/user_save', 'Admin\IntegralController@user_save');
 

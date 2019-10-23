@@ -18,11 +18,13 @@ class IntegralController extends Controller
             //将个人信息拼成一维数组添加进数据库
             $info = ['openid' => $data['openid'], "name" => $data['nickname'], "add_time" => time(), "up_time" => 0, "guide" => $guide];
             $res = IntegralModel::create($info);
+            $name=$data['nickname'];
             //返回添加结果\
         }else{
             $res=IntegralModel::where("openid",$openid)->update(["attention"=>1,"guide" => $guide]);
+            $name=$info->name;
         }
-        return $res;
+        return $name;
     }
     static public function integral_save($openid){
         //根据$openid查询数据库
@@ -76,6 +78,6 @@ class IntegralController extends Controller
                 $res=IntegralModel::where("openid",$res[1])->update(['performance'=>$num]);
             }
         }
-        return $res;
+        return $re;
     }
 }
