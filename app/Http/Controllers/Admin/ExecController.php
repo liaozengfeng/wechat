@@ -68,7 +68,7 @@ class ExecController extends Controller
             if(empty($info)){
                 $content="您暂未选择课程,请选择课程!";
             }else{
-                $content="你好!".$info['name']."同学,你当前的课程安排如下\n第一节课:".$info['one']."\n第二节课:".$info['two']."\n第三节课:".$info['three']."\n第四节课:".$info['four'];
+                $content="你好!".$info['name']."同学,你的课程安排如下\n第一节课:".$info['one']."\n第二节课:".$info['two']."\n第三节课:".$info['three']."\n第四节课:".$info['four'];
             }
         }else if($xml_arr['MsgType']=='text'){
             $content = "廖神支付!欢迎你!!";
