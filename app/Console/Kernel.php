@@ -47,7 +47,7 @@ class Kernel extends ConsoleKernel
                     }
                     $aaa=[
                         "touser"=>$arr['openid'],
-                        "template_id"=>" 	UCvamyRtD2jXBN_jxOVbbWaO0H_7OP26qwvltPALbac",
+                        "template_id"=>"eeVIhUFGCbe9w-tQ3r-W7w-dX9T5Qfjv2OXwr-WOjZk",
                         "data"=>[
                             "name"=>[
                                 "value"=>$arr['name'],

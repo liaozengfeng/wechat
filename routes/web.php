@@ -99,6 +99,7 @@ Route::any('/admin/menu', 'Admin\MenuController@menu');
 Route::any('/course/list', 'Admin\CourseController@list');
 Route::any('/course/list_do', 'Admin\CourseController@list_do');
 Route::any('/course/list_add', 'Admin\CourseController@list_add');
+Route::any('/course/aaa', 'Admin\CourseController@aaa');
 
 
 Route::any('/admin/jssdk', 'Admin\JssdkController@jssdk');
