@@ -63,8 +63,7 @@ class ExecController extends Controller
             ];
             $url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".access_token();
             $aaa=json_encode($aaa,JSON_UNESCAPED_UNICODE);
-            $re=curl_post($url,$aaa);
-            dd($re);exit;
+            $re=curl_post($url,$aaa);exit;
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="音乐"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>"."OvCzfxlDJZOhzl4EjwA1L1LmD3idN1e4IphMDLj-Hg0"."</MediaId></Voice></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="视频"){
