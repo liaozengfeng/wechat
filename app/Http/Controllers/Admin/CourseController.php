@@ -49,13 +49,13 @@ class CourseController extends Controller
             $arr['name']=$info['name'];
             $data=CourseModel::get()->toArray();
             foreach($data as $k=>$v) {
-                if ($va['one'] == $v['id']) {
+                if ($info['one'] == $v['id']) {
                     $arr['one'] = $v['name'];
-                } else if ($va['two'] == $v['id']) {
+                } else if ($info['two'] == $v['id']) {
                     $arr['two'] = $v['name'];
-                } else if ($va['three'] == $v['id']) {
+                } else if ($info['three'] == $v['id']) {
                     $arr['three'] = $v['name'];
-                } else if ($va['four'] == $v['id']) {
+                } else if ($info['four'] == $v['id']) {
                     $arr['four'] = $v['name'];
                 }
             }
