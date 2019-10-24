@@ -74,7 +74,7 @@ class Kernel extends ConsoleKernel
                     file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$re,FILE_APPEND);
                 }
             }
-        })->cron('20:00');
+        })->everyMinute();
     }
 
     /**
