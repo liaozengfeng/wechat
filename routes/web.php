@@ -103,6 +103,7 @@ Route::any('/course/aaa', 'Admin\CourseController@aaa');
 
 //油价
 Route::any('/Oll/info', 'Admin\OllController@info');
+Route::any('/oll/aaa', 'Admin\OllController@aaa');
 
 
 Route::any('/admin/jssdk', 'Admin\JssdkController@jssdk');

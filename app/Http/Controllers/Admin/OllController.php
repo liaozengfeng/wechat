@@ -36,11 +36,36 @@ class OllController extends Controller
             foreach ($oll as $k=>$v){
                 if(in_array($val,$v)){
                     $arr=$v;
-                    \Cache::put($count,$res+1);
-                    \Cache::put($value,$arr);
+                    \Cache::put($count,$res+1,3600);
+                    \Cache::put($value,$arr,3600);
                 }
             }
         }
         return $arr;
+    }
+
+    public function aaa(){
+        $url="http://apis.juhe.cn/cnoil/oil_city?key=038f96a552851a4aa8e93945d71e57ff";
+        $aaa=curl_get($url);
+        $aaa=json_decode($aaa,true,JSON_UNESCAPED_UNICODE);
+        $open=$oll=\Cache::get("oll");
+        if ($aaa['result']==$open) {
+            $url="https://api.weixin.qq.com/cgi-bin/user/get?access_token=".access_token()."&next_openid=";
+            $openid=curl_get($url);
+            $openid=json_decode($openid,1);
+            $openid=$openid['data']['openid'];
+            $data = [
+                "touser" => $openid,
+                "msgtype" => "text",
+                "text" => [
+                    "content" => "油价变动通知",
+                ]
+            ];
+            $url="https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".access_token();
+            $data=json_encode($data,JSON_UNESCAPED_UNICODE);
+            $res=curl_post($url,$data);
+            $res=json_decode($res,1);
+            dd($res);
+        }
     }
 }
