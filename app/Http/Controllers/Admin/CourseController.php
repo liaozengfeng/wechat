@@ -46,8 +46,18 @@ class CourseController extends Controller
     static public function info_list($openid){
         $info=IntegralModel::where("openid",$openid)->first()->toArray();
         if (!empty($info['one'])){
+            $arr['name']=$info['name'];
             $data=CourseModel::get()->toArray();
-
+            foreach($data as $k=>$v) {
+                if ($va['one'] == $v['id']) {
+                    $arr['one'] = $v['name'];
+                } else if ($va['two'] == $v['id']) {
+                    $arr['two'] = $v['name'];
+                } else if ($va['three'] == $v['id']) {
+                    $arr['three'] = $v['name'];
+                } else if ($va['four'] == $v['id']) {
+                    $arr['four'] = $v['name'];
+                }
             }
         }else{
             $arr=[];
