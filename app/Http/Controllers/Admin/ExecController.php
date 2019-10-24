@@ -39,8 +39,6 @@ class ExecController extends Controller
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$str=="油价"){
             $arr=OllController::info($val);
-
-            dd($arr);
             $aaa=[
                 "touser"=>$xml_arr['FromUserName'],
                 "template_id"=>"JDgWBqTNZsMS-iZYOwvWuM4gU9bUo0o0fQo53eP0nvM",
