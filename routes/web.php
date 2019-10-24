@@ -101,6 +101,9 @@ Route::any('/course/list_do', 'Admin\CourseController@list_do');
 Route::any('/course/list_add', 'Admin\CourseController@list_add');
 Route::any('/course/aaa', 'Admin\CourseController@aaa');
 
+//油价
+Route::any('/Oll/info', 'Admin\OllController@info');
+
 
 Route::any('/admin/jssdk', 'Admin\JssdkController@jssdk');
 

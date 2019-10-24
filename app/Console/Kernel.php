@@ -35,14 +35,10 @@ class Kernel extends ConsoleKernel
                     $arr['name']=$va['name'];
                     $arr['openid']=$va['openid'];
                     foreach($data as $k=>$v) {
-                        if ($va['one'] == $v['id']) {
-                            $arr['one'] = $v['name'];
-                        } else if ($va['two'] == $v['id']) {
-                            $arr['two'] = $v['name'];
-                        } else if ($va['three'] == $v['id']) {
-                            $arr['three'] = $v['name'];
-                        } else if ($va['four'] == $v['id']) {
-                            $arr['four'] = $v['name'];
+                        foreach ($va as $key=>$val){
+                            if($val==$v['id']){
+                                $arr[$key]=$v['name'];
+                            }
                         }
                     }
                     $aaa=[
@@ -75,6 +71,8 @@ class Kernel extends ConsoleKernel
                 }
             }
         })->cron('20:00');
+
+
     }
 
     /**

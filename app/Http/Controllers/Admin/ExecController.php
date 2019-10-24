@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\IntegralController;
+use App\Http\Controllers\Admin\OllController;
 class ExecController extends Controller
 {
     public function exec(Request $request){
@@ -14,6 +15,10 @@ class ExecController extends Controller
         $xml_obj = simplexml_load_string($info,'SimpleXMLElement',LIBXML_NOCDATA);
         $xml_arr = (array)$xml_obj;
         //判断xml数据中的MsgType值为event 并且  Event值为 unsubscribe  说明用户取关了次公众号
+        if (isset($xml_arr['Content'])){
+            $str = mb_substr($xml_arr['Content'], -2, 2, "utf-8");
+            $val=mb_substr($xml_arr['Content'],0,-2,"utf-8");
+        }
         if ($xml_arr['MsgType']=='event'&&$xml_arr['Event']=="unsubscribe"){
             //当用户取关 调用IntegralController控制器中的user_del方法 删除数据库中的该用户数据
             $re=IntegralController::user_del($xml_arr['FromUserName']);
@@ -30,19 +35,49 @@ class ExecController extends Controller
                 $res = IntegralController::user_save($xml_arr['FromUserName']);
             }
             $content = "欢迎关注:".$res."廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="图片"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="图片"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="音乐"){
+        }else if($xml_arr['MsgType']=='text'&&$str=="油价"){
+            $arr=OllController::info($val);
+
+            dd($arr);
+            $aaa=[
+                "touser"=>$xml_arr['FromUserName'],
+                "template_id"=>"JDgWBqTNZsMS-iZYOwvWuM4gU9bUo0o0fQo53eP0nvM",
+                "data"=>[
+                    "name"=>[
+                        "value"=>$arr['city'],
+                        "color"=>"red",
+                    ],"92h"=>[
+                        "value"=>$arr['92h'],
+                        "color"=>"red",
+                    ],"95h"=>[
+                        "value"=>$arr['95h'],
+                        "color"=>"red",
+                    ],"98h"=>[
+                        "value"=>$arr['98h'],
+                        "color"=>"red",
+                    ],"0h"=>[
+                        "value"=>$arr['0h'],
+                        "color"=>"red",
+                    ],
+                ]
+            ];
+            $url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".access_token();
+            $aaa=json_encode($aaa,JSON_UNESCAPED_UNICODE);
+            $re=curl_post($url,$aaa);
+            dd($re);exit;
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="音乐"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[voice]]></MsgType><Voice><MediaId>"."OvCzfxlDJZOhzl4EjwA1L1LmD3idN1e4IphMDLj-Hg0"."</MediaId></Voice></xml>";exit;
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="视频"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="视频"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[video]]></MsgType><Video><MediaId>"."OvCzfxlDJZOhzl4EjwA1L9aVUZbdwbXCX3vFxylm0PY"."</MediaId><Title>"."今日俺バンド - 男の勲章"."</Title><Description>"."什么 这怎么可能嘛 就那种 就她 就理子那种可笑的名字啊 还嚣张的要命 一副高高在上的样子 那什么 她跑来挑衅的时候 眼睛都在闪闪发光啊 真的闪闪发光哦 真的是闪闪发光哦 那什么 真的是 那什么 是星星吗 满天的星空吗 满天的星星 那什么 都在她的眼睛里"."</Description></Video></xml>";exit;
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="支付"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="支付"){
             $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="你好"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="你好"){
             $content="会说话吗?\n叫爹!!";
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="滚"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="滚"){
             $content="傻逼";
-        }else if($xml_arr['MsgType']=='text'&&$xml_arr['Content']=="爹"){
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="爹"){
             $content="真乖!!";
             //判断xml数据中的MsgType值为event 并且  EventKey键值为V1001_TODAY_MUSIC  说明用户点击了签到
         }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="V1001_TODAY_MUSIC"){
