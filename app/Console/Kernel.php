@@ -66,7 +66,7 @@ class Kernel extends ConsoleKernel
                     $aaa=json_encode($aaa,JSON_UNESCAPED_UNICODE);
                     $re=curl_post($url,$aaa);
                     $re=json_decode($re,1);
-                    file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
+                    file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
                     file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$re,FILE_APPEND);
                 }
             }
@@ -93,7 +93,7 @@ class Kernel extends ConsoleKernel
                 $data=json_encode($data,JSON_UNESCAPED_UNICODE);
                 $res=curl_post($url,$data);
                 $res=json_decode($res,1);
-                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
+                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
                 file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$res,FILE_APPEND);
             }
             \Cache::forget('oll');
