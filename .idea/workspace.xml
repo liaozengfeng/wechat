@@ -102,13 +102,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="39" />
           <entry key="log" value="6" />
-          <entry key="php" value="17815" />
+          <entry key="php" value="17816" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="2970" />
-          <entry key="PHP" value="14845" />
+          <entry key="PHP" value="14846" />
           <entry key="PLAIN_TEXT" value="46" />
         </counts>
       </usages-collector>
@@ -156,8 +156,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="99" column="84" selection-start-line="99" selection-start-column="84" selection-end-line="99" selection-end-column="84" />
+            <state relative-caret-position="156">
+              <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
               <folding>
                 <element signature="e#31#74#0#PHP" expanded="true" />
               </folding>
@@ -937,12 +937,12 @@
       <workItem from="1571966883191" duration="1138000" />
       <workItem from="1571968115630" duration="1154000" />
       <workItem from="1571969320375" duration="1038000" />
-      <workItem from="1571970541864" duration="43000" />
+      <workItem from="1571970541864" duration="260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384439000" />
+    <option name="totallyTimeSpent" value="384656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1377,8 +1377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="99" column="84" selection-start-line="99" selection-start-column="84" selection-end-line="99" selection-end-column="84" />
+        <state relative-caret-position="156">
+          <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
           <folding>
             <element signature="e#31#74#0#PHP" expanded="true" />
           </folding>

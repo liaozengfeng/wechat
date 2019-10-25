@@ -77,7 +77,7 @@ class Kernel extends ConsoleKernel
             $aaa=curl_get($url);
             $aaa=json_decode($aaa,true,JSON_UNESCAPED_UNICODE);
             $open=$oll=\Cache::get("oll");
-            if ($aaa['result']!=$open) {
+            if ($aaa['result']==$open) {
                 $url="https://api.weixin.qq.com/cgi-bin/user/get?access_token=".access_token()."&next_openid=";
                 $openid=curl_get($url);
                 $openid=json_decode($openid,1);
