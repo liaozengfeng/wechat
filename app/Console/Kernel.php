@@ -70,7 +70,7 @@ class Kernel extends ConsoleKernel
                     file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$re,FILE_APPEND);
                 }
             }
-        })->cron('20:00');
+        })->everyMinute();
 
         $schedule->call(function () {
             $url="http://apis.juhe.cn/cnoil/oil_city?key=038f96a552851a4aa8e93945d71e57ff";

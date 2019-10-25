@@ -22,6 +22,7 @@ class OllController extends Controller
         $count=md5($val)."count";
         $res=empty(\Cache::get($count))?0:\Cache::get($count);
         if ($res>=10){
+//            dd($res);
             if (\Cache::has($value)){
                 $arr=\Cache::get($value);
             }else{
@@ -33,11 +34,14 @@ class OllController extends Controller
                 }
             }
         }else{
+//            dd($res);
             foreach ($oll as $k=>$v){
                 if(in_array($val,$v)){
                     $arr=$v;
                     \Cache::put($count,$res+1,3600);
                     \Cache::put($value,$arr,3600);
+                }else{
+                    $arr=[];
                 }
             }
         }
