@@ -69,7 +69,11 @@ class OllController extends Controller
             $data=json_encode($data,JSON_UNESCAPED_UNICODE);
             $res=curl_post($url,$data);
             $res=json_decode($res,1);
-            dd($res);
+            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
+            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$res,FILE_APPEND);
         }
-    }
+        dd($res);
+//        \Cache::forget('oll');
+        }
+
 }
