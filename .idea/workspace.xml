@@ -102,13 +102,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="39" />
           <entry key="log" value="6" />
-          <entry key="php" value="17793" />
+          <entry key="php" value="17799" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="2970" />
-          <entry key="PHP" value="14823" />
+          <entry key="PHP" value="14829" />
           <entry key="PLAIN_TEXT" value="46" />
         </counts>
       </usages-collector>
@@ -156,8 +156,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="308">
+              <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
               <folding>
                 <element signature="e#31#74#0#PHP" expanded="true" />
               </folding>
@@ -936,12 +936,12 @@
       <workItem from="1571964138151" duration="758000" />
       <workItem from="1571966883191" duration="1138000" />
       <workItem from="1571968115630" duration="1154000" />
-      <workItem from="1571969320375" duration="515000" />
+      <workItem from="1571969320375" duration="855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383873000" />
+    <option name="totallyTimeSpent" value="384213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -957,7 +957,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Structure" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20442359" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20442359" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -978,7 +978,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32908848" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.32908848" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.32908848" />
     </layout>
     <layout-to-restore>
       <window_info anchor="top" id="Structure" order="0" weight="0.25" />
@@ -1376,8 +1376,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state relative-caret-position="308">
+          <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
           <folding>
             <element signature="e#31#74#0#PHP" expanded="true" />
           </folding>

@@ -69,11 +69,7 @@ class Kernel extends ConsoleKernel
                     file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
                     file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$re,FILE_APPEND);
                 }
-                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
-                file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"错误",FILE_APPEND);
             }
-            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
-            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"未执行",FILE_APPEND);
         })->everyMinute();
 
         $schedule->call(function () {
@@ -90,7 +86,7 @@ class Kernel extends ConsoleKernel
                     "touser" => $openid,
                     "msgtype" => "text",
                     "text" => [
-                        "content" => "油价变动通知",
+                        "content" => "油价变动通知".time(),
                     ]
                 ];
                 $url="https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=".access_token();
