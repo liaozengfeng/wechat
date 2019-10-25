@@ -77,7 +77,7 @@ class Kernel extends ConsoleKernel
             $aaa=curl_get($url);
             $aaa=json_decode($aaa,true,JSON_UNESCAPED_UNICODE);
             $open=$oll=\Cache::get("oll");
-            if ($aaa['result']==$open) {
+            if ($aaa['result']!=$open) {
                 $url="https://api.weixin.qq.com/cgi-bin/user/get?access_token=".access_token()."&next_openid=";
                 $openid=curl_get($url);
                 $openid=json_decode($openid,1);
@@ -96,6 +96,8 @@ class Kernel extends ConsoleKernel
                 file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
                 file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),$res,FILE_APPEND);
             }
+            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",FILE_APPEND);
+            file_put_contents(storage_path('logs/shop/'.date('Y-m-d').'.log'),"油价无变化",FILE_APPEND);
             \Cache::forget('oll');
         })->everyMinute();
     }
