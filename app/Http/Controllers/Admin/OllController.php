@@ -50,7 +50,7 @@ class OllController extends Controller
     }
 
     public function aaa(){
-       
+
         }
 
 }
