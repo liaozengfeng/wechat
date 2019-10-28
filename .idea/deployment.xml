@@ -16,7 +16,7 @@
       <paths name="刘鑫">
         <serverdata>
           <mappings>
-            <mapping deploy="/data/wwwroot/default/shop/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/data/wwwroot/default/wechat/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

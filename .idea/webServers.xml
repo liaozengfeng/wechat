@@ -11,7 +11,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="48adec3e-a329-4960-880c-458c9e423ac2" name="刘鑫" url="http://39.107.113.186">
-        <fileTransfer host="39.107.113.186" port="22" rootFolder="/data/wwwroot/default/shop/" accessType="SFTP">
+        <fileTransfer host="39.107.113.186" port="22" rootFolder="/data/wwwroot/default/wechat/" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
           </advancedOptions>

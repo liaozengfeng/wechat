@@ -19,6 +19,7 @@ class OllController extends Controller
             \Cache::put("oll",$data['result']);
             $oll=$data['result'];
         }
+//        dd($data);
         $value=md5($val);
         $count=md5($val)."count";
         $res=empty(\Cache::get($count))?0:\Cache::get($count);
