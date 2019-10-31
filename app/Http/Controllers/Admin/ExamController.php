@@ -13,11 +13,9 @@ class ExamController extends Controller
     }
     public function userinfo(Request $request){
         $code=$request->input("code");
-        dd($code);
         $url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".env('WECHAT_APPID')."&secret=".env('WECHAT_APPSECRET')."&code=".$code."&grant_type=authorization_code";
         $info=curl_get($url);
         $info=json_decode($info,1);
-        dd($info);
         $openid=$info['openid'];
         $url="https://api.weixin.qq.com/sns/userinfo?access_token=".$info['access_token']."&openid=".$openid."&lang=zh_CN";
         $re=curl_get($url);
