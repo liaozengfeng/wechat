@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9437b41-5472-45ba-b51e-aa3cce387cf9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php" afterDir="false" />
-    </list>
+    <list default="true" id="b9437b41-5472-45ba-b51e-aa3cce387cf9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
         <counts>
           <entry key="env" value="18" />
           <entry key="jpg" value="2" />
-          <entry key="log" value="36" />
+          <entry key="log" value="37" />
           <entry key="php" value="197" />
         </counts>
       </usages-collector>
@@ -129,7 +127,7 @@
           <entry key="Blade" value="36" />
           <entry key="Image" value="2" />
           <entry key="PHP" value="161" />
-          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="PLAIN_TEXT" value="55" />
         </counts>
       </usages-collector>
     </session>
@@ -167,7 +165,16 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;abc7d9d9-2ce9-4879-aaca-7eebb3e5f591&gt;/storage/logs/laravel-2019-10-31.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5504" column="134" lean-forward="true" selection-start-line="5504" selection-start-column="134" selection-end-line="5507" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -951,12 +958,12 @@
       <workItem from="1572484519431" duration="1119000" />
       <workItem from="1572485871707" duration="1146000" />
       <workItem from="1572487107642" duration="1133000" />
-      <workItem from="1572488349368" duration="339000" />
+      <workItem from="1572488349368" duration="499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400491000" />
+    <option name="totallyTimeSpent" value="400651000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1395,7 +1402,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
