@@ -50,8 +50,26 @@ class OllController extends Controller
         return $arr;
     }
 
-    public function aaa(){
-
+    public function aaa($a){
+        $num=strlen($a);
+        $str="";
+        for ($i=0;$i<$num;$i++){
+            $b=$a[$i];
+            $c=0;
+            if($i+1<$num&&$b!==$a[$i+1]||$i+1==$num) {
+                for ($q = 0; $q < $num; $q++) {
+                    if ($b == $a[$q]) {
+                        $c += 1;
+                    }
+                }
+                $d=$c-1;
+                if ($d!=0){
+                    $str.=$d;
+                }
+                $str.=$b;
+            }
         }
+        echo $str;
+    }
 
 }

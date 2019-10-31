@@ -115,5 +115,9 @@ Route::any('/admin/user_save', 'Admin\IntegralController@user_save');
 
 Route::any('/exec/exec','Admin\ExecController@exec');
 
+//考试 授权登录
+Route::any('/exam/login','Admin\ExamController@login');
+Route::any('/exam/userinfo','Admin\ExamController@userinfo');
+
 
 

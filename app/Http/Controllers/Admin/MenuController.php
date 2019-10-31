@@ -21,15 +21,13 @@ class MenuController extends Controller
           "key"=>"V1002_TODAY_MUSIC"
       ],
 
-
-
     [
           "name"=>"菜单",
            "sub_button"=>[
            [
-               "type"=>"view",
-               "name"=>"搜索",
-               "url"=>"http://www.baidu.com/"
+               "type"=>"click",
+               "name"=>"查询天气",
+               "key"=>"exam_weather"
             ],[
                 "type"=>"view",
                 "name"=>"网易云音乐",
@@ -42,12 +40,13 @@ class MenuController extends Controller
                    "type"=>"click",
                    "name"=>"查看课程",
                    "key"=>"See_the_course"
+               ],[
+                   "type"=>"view",
+                   "name"=>"个人中心",
+                   "url"=>"http://47.93.25.230/exam/userinfo"
                ],
            ]
        ],
-
-
-
 
      [
          "type"=>"click",

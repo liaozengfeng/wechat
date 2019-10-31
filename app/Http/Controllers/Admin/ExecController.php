@@ -34,7 +34,8 @@ class ExecController extends Controller
                 //当用户管制公众号时 调用IntegralController控制器中的user_save方法 根据用户openid添加用户信息
                 $res = IntegralController::user_save($xml_arr['FromUserName']);
             }
-            $content = "欢迎关注:".$res."廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+//            $content = "欢迎关注:".$res."廖神支付!\n廖神支付,\n支付无忧;\n平台保证:\n无售后!!\n无服务!!\n无态度!!";
+            $content="您好,".$res."帅哥\n欢迎关注本工作号,\n发送1 回复本班讲师名称\n发送2 回复本班讲师帅帅照";
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="图片"){
             echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&$str=="油价"){
@@ -77,6 +78,10 @@ class ExecController extends Controller
             $content="支付提醒:\n本平台不提供任何售后服务哦!!!!";
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="你好"){
             $content="会说话吗?\n叫爹!!";
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="1"){
+            $content="本班讲师:白伟";
+        }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="2"){
+            echo "<xml><ToUserName><![CDATA[".$xml_arr['FromUserName']."]]></ToUserName><FromUserName><![CDATA[".$xml_arr['ToUserName']."]]></FromUserName><CreateTime>".time()."</CreateTime><MsgType><![CDATA[image]]></MsgType><Image><MediaId>"."OvCzfxlDJZOhzl4EjwA1L2n60OIWxD1LEEOQHDH_2rM"."</MediaId></Image></xml>";exit;
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="滚"){
             $content="傻逼";
         }else if($xml_arr['MsgType']=='text'&&isset($xml_arr['Content'])&&$xml_arr['Content']=="爹"){
@@ -99,6 +104,31 @@ class ExecController extends Controller
             $re=IntegralController::integral_select($xml_arr['FromUserName']);
             //拼接回复数据
             $content = "已有积分:".$re;
+        }else if ($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="exam_weather"){
+            $res=ExamController::tqlist();
+            $url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".access_token();
+            $aaa=[
+                "touser"=>$xml_arr['FromUserName'],
+                "template_id"=>"hnzldZw0vdtYLNr5J8wyOtcbMK-jtq78xp9NDwLxr1s",
+                "data"=>[
+                    "date"=>[
+                        "value"=>date("Y:m:d",time()),
+                        "color"=>"red",
+                    ],"week"=>[
+                        "value"=>$res['result']['realTime']['week'],
+                        "color"=>"red",
+                    ],"temperature"=>[
+                        "value"=>$res['result']['realTime']['wtTemp'],
+                        "color"=>"red",
+                    ],"weather"=>[
+                        "value"=>$res['result']['realTime']['wtNm'],
+                        "color"=>"red",
+                    ]
+                ]
+            ];
+            $data=json_encode($aaa,JSON_UNESCAPED_UNICODE);
+            $res=curl_post($url,$data);
+            dd($res);
         }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="See_the_course"){
             //查看课程
             $info=CourseController::info_list($xml_arr['FromUserName']);
