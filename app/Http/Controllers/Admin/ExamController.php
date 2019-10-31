@@ -13,6 +13,7 @@ class ExamController extends Controller
     }
     public function userinfo(Request $request){
         $code=$request->input("code");
+        dd($code);
         $url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".env('WECHAT_APPID')."&secret=".env('WECHAT_APPSECRET')."&code=".$code."&grant_type=authorization_code";
         $info=curl_get($url);
         $info=json_decode($info,1);
@@ -23,7 +24,6 @@ class ExamController extends Controller
         $res=json_decode($re,1);
         return view("admin.exam.list",['name'=>$res['nickname'],"url"=>$res['headimgurl'],"sex"=>$res["sex"]]);
     }
-
 
     static public function tqlist(){
         $url="http://api.k780.com/?app=weather.realtime&weaid=1&ag=today,futureDay,lifeIndex,futureHour&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
