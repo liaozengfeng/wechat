@@ -9,12 +9,10 @@ class ExamController extends Controller
 {
     public function login(Request $request){
         $url=urlencode(env('APP_URL')."/exam/userinfo");
-        dd($url);
-        header("location:https://open.weixin.qq.com/connect/oauth2/authorize?appid=".env('WECHAT_APPID')."&redirect_uri=".$url."&response_type=code&scope=snsapi_userinfo&state=#wechat_redirect");
+        header("location:https://open.weixin.qq.com/connect/oauth2/authorize?appid=".env('WECHAT_APPID')."&redirect_uri=".$url."&response_type=code&scope=snsapi_base&state=#wechat_redirect");
     }
     public function userinfo(Request $request){
         $code=$request->input("code");
-        dd($code);
         $url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".env('WECHAT_APPID')."&secret=".env('WECHAT_APPSECRET')."&code=".$code."&grant_type=authorization_code";
         $info=curl_get($url);
         $info=json_decode($info,1);
