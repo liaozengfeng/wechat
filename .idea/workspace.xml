@@ -105,13 +105,13 @@
           <entry key="dummy" value="1" />
           <entry key="env" value="65" />
           <entry key="log" value="6" />
-          <entry key="php" value="19467" />
+          <entry key="php" value="19468" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="3053" />
-          <entry key="PHP" value="16414" />
+          <entry key="PHP" value="16415" />
           <entry key="PLAIN_TEXT" value="72" />
         </counts>
       </usages-collector>
@@ -165,8 +165,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="194">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -949,12 +949,12 @@
       <workItem from="1572483266254" duration="1168000" />
       <workItem from="1572484519431" duration="1119000" />
       <workItem from="1572485871707" duration="1146000" />
-      <workItem from="1572487107642" duration="779000" />
+      <workItem from="1572487107642" duration="857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399798000" />
+    <option name="totallyTimeSpent" value="399876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1392,8 +1392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ExamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="194">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
