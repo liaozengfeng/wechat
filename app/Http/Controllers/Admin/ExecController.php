@@ -127,8 +127,7 @@ class ExecController extends Controller
                 ]
             ];
             $data=json_encode($aaa,JSON_UNESCAPED_UNICODE);
-            $res=curl_post($url,$data);
-            dd($res);
+            $res=curl_post($url,$data);exit;
         }else if($xml_arr['MsgType']=='event'&&$xml_arr['EventKey']=="See_the_course"){
             //查看课程
             $info=CourseController::info_list($xml_arr['FromUserName']);
