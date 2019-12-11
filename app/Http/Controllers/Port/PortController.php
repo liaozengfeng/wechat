@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Port;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class PortController extends Controller
 {
     public function save(Request $request){
