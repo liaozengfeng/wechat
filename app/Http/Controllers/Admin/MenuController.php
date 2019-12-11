@@ -62,6 +62,8 @@ class MenuController extends Controller
     }
 
     public function menu_save(Request $request){
+        dd(12<<3|14);
+
         if ($request->isMethod("POST")){
             if ($request->input("next")==1){
                 $info=["first_name"=>$request->input("first_name"),"type"=>1];

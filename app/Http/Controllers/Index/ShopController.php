@@ -162,14 +162,14 @@ class shopController extends Controller
         }
         $id=substr($id,0,strlen($id)-1);
         $shop_model=new ShopModel;
-        $shopinfo=$shop_model->whereRaw("shop_id in ($id)")->get()->toArray();
+        $shopinfo=$shop_model->whereRaw("shop_id in ($id)")->get()->torray();
         if ($shopinfo) {
             return view("index.user.usercollect",['shopinfo'=>$shopinfo]);
         }else{
             return false;
         }
 
-    }
+    }A
     /*收藏删除*/
     public function userdelete(Request $request)
     {
