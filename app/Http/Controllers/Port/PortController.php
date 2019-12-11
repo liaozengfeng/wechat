@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 class PortController extends Controller
 {
     public function index(Request $request){
-		echo 121;exit;
         $info=$request->all();
         $redis = new \Redis();
         $redis->connect('127.0.0.1');
@@ -23,7 +22,6 @@ class PortController extends Controller
     }
 
     public function list(Request $request){
-		echo 212;exit;
         $redis = new \Redis();
         $redis->connect('127.0.0.1');
         return $redis->get("shopinfo");
