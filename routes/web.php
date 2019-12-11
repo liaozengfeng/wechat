@@ -120,5 +120,5 @@ Route::any('/exam/login','Admin\ExamController@login');
 Route::any('/exam/userinfo','Admin\ExamController@userinfo');
 
 
-Route::any('/port/index','Admin\PortController@index');
-Route::any('/port/list','Admin\PortController@list');
+Route::any('/port/index','Port\PortController@index');
+Route::any('/port/list','Port\PortController@list');
