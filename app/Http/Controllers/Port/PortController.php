@@ -23,7 +23,6 @@ class PortController extends Controller
 
     public function list(Request $request){
         $redis = new \Redis();
-        echo 121;exit;
         $redis->connect('127.0.0.1');
         echo 232;exit;
         return $redis->get("shopinfo");
